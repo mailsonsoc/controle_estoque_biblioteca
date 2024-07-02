@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css']
+  styleUrls: ['./book-list.component.css'],
+  standalone: true,
+  imports: [RouterModule, CommonModule]
 })
 export class BookListComponent implements OnInit {
   books: Book[] = [];
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
-    this.getBooks();
-  }
-
-  getBooks(): void {
-    this.bookService.getBooks().subscribe((data: Book[]) => {
-      this.books = data;
+    this.bookService.getBooks().subscribe((books) => {
+      this.books = books;
     });
   }
 }

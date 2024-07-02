@@ -1,7 +1,8 @@
 <div *ngIf="book">
   <h2>Detalhes do Livro</h2>
-  <p><strong>Título:</strong> {{ book?.title }}</p>
-  <p><strong>Autor:</strong> {{ book?.author }}</p>
-  <p><strong>Ano:</strong> {{ book?.year }}</p>
-  <p><strong>Gênero:</strong> {{ book?.genre }}</p>
+  <p><strong>Título:</strong> {{ book.title }}</p>
+  <p><strong>Autor:</strong> {{ book.author }}</p>
+  <p><strong>Ano:</strong> {{ book.year }}</p>
+  <p><strong>Gênero:</strong> {{ book.genre }}</p>
+  <a routerLink="/">Voltar à lista de livros</a>
 </div>

@@ -1,19 +1,16 @@
-<div>
-    <h2>Adicionar/Editar Livro</h2>
-    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-      <label for="title">Título:</label>
-      <input id="title" formControlName="title">
-      
-      <label for="author">Autor:</label>
-      <input id="author" formControlName="author">
-      
-      <label for="year">Ano:</label>
-      <input id="year" formControlName="year">
-      
-      <label for="genre">Gênero:</label>
-      <input id="genre" formControlName="genre">
-      
-      <button type="submit" [disabled]="bookForm.invalid">Salvar</button>
-    </form>
-  </div>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <label for="title">Título:</label>
+  <input id="title" formControlName="title" type="text">
   
+  <label for="author">Autor:</label>
+  <input id="author" formControlName="author" type="text">
+  
+  <label for="year">Ano:</label>
+  <input id="year" formControlName="year" type="number">
+  
+  <label for="genre">Gênero:</label>
+  <input id="genre" formControlName="genre" type="text">
+  
+  <button type="submit">Adicionar</button>
+  <button type="button" (click)="onCancel()">Cancelar</button>
+</form>
